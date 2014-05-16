@@ -8,6 +8,12 @@ module.exports = function(grunt) {
     // whitespace rules
     lintspaces: require('./build/config/lintspaces'),
 
+    // file copier
+    copy: require('./build/config/copy'),
+
+    // static server
+    connect: require('./build/config/connect')
+
   });
 
   // load npm plugins (all dependencies that match /^grunt/)

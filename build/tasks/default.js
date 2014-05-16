@@ -1,4 +1,6 @@
 module.exports = [
   'jshint',
-  'lintspaces'
+  'lintspaces',
+  'copy',
+  'connect'
 ];
