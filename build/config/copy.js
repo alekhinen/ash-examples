@@ -40,7 +40,7 @@ module.exports = {
       // include javascripts
       {
         expand: true,
-        src: ['src/javascripts/*'],
+        src: ['src/javascripts/**/*'],
         flatten: true,
         dest: 'dist/javascripts/',
         filter: 'isFile'

@@ -3,10 +3,39 @@
 <head>
   <title>Recordings Example</title>
   <link href="stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <h1>Title</h1>
+  <div class = "meat">
+    <h1>Ash Example - Recordings</h1>
+    <table class = "table table-striped">
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Episode Title</td>
+          <td>Airtime</td>
+          <td>Runtime</td>
+        </tr>
+      </thead>
+      <tbody class = "recordings-list">
+
+      </tbody>
+    </table>
+  </div>
 </body>
+
+<script type="ash/template" id="recordings-list-template">
+  <tr>
+    <td>{{title}}</td>
+    <td>{{episodeTitle}}</td>
+    <td>{{airtime}}</td>
+    <td>{{runtime}}</td>
+  </tr>
+</script>
+
 <script src="javascripts/Ash.js"></script>
 <script src="javascripts/App.js"></script>
+<script src="javascripts/recordingModel.js"></script>
+<script src="javascripts/recordingView.js"></script>
+
 </html>
