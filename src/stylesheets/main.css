@@ -2,3 +2,47 @@
   width: 900px;
   margin: auto;
 }
+
+.popup-bg {
+  background: rgba(0, 0, 0, .4);
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+}
+
+tr.recording:hover {
+  cursor:pointer;
+  background-color: #e6e6e6;
+}
+
+.recording-popup {
+  background: white;
+  border-radius: 5px;
+  width: 500px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -150px 0 0 -250px;
+  padding:10px;
+  box-sizing: border-box;
+  clear:both;
+}
+
+  .recording-popup img {
+    float:left;
+    margin-right:10px;
+  }
+
+  .recording-popup .text-content {
+    float:left;
+    max-width: 380px;
+  }
+
+.show {
+  display:block;
+}

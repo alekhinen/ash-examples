@@ -1,5 +1,5 @@
-App.module('View.Recordings', function() {
-  return Ash.CollectionView.subclass('RecordingsView', {
+App.module('View.Saved', function() {
+  return Ash.CollectionView.subclass('SavedView', {
     el: '.table',
     view: App.View.Recording,
     target: '.recordings-list',

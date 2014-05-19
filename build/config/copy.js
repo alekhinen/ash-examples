@@ -46,6 +46,15 @@ module.exports = {
         filter: 'isFile'
       },
 
+      // include recordings.json
+      {
+        expand: true,
+        src: ['src/recordings.json'],
+        flatten: true,
+        dest: 'dist/',
+        filter: 'isFile'
+      },
+
       // include index
       {
         expand: true,

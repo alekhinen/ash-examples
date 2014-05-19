@@ -7,8 +7,10 @@
 </head>
 <body>
   <div class = "meat">
-    <h1>Ash Example - Recordings</h1>
-    <table class = "table table-striped">
+    <h1 class="title">Ash Example - Recordings</h1>
+    <button class="btn btn-default show-all-btn">Show All Episodes</button>
+    <button class="btn btn-default show-saved-btn">Show Saved Episodes</button>
+    <table class="table table-striped">
       <thead>
         <tr>
           <td>Title</td>
@@ -17,25 +19,79 @@
           <td>Runtime</td>
         </tr>
       </thead>
-      <tbody class = "recordings-list">
+      <tbody class="recordings-list">
 
       </tbody>
     </table>
+    <div class = "popup-container">
+
+    </div>
   </div>
 </body>
 
-<script type="ash/template" id="recordings-list-template">
-  <tr>
-    <td>{{title}}</td>
-    <td>{{episodeTitle}}</td>
-    <td>{{airtime}}</td>
-    <td>{{runtime}}</td>
-  </tr>
+<script type="ash/template" id="recording-template">
+  <td>{{title}}</td>
+  <td>{{episode_title}}</td>
+  <td>{{air_time}}</td>
+  <td>{{run_time}}</td>
+</script>
+
+<script type="ash/template" id="recording-popup-template">
+  <div class="popup-bg">
+    <div class="recording-popup">
+      <img src={{poster_url}}></img>
+      <div class="text-content">
+        <h1>{{title}}</h1>
+        <h6>{{episode_title}}</h6>
+        <a href="#close" class="closer">close</a>
+        <a href="#edit" class="edit">edit</a>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script type="ash/template" id="edit-recording-template">
+  <div class="popup-bg">
+    <div class="recording-popup">
+      <img src={{poster_url}}></img>
+      <div class="text-content">
+        <form onsubmit="event.preventDefault();">
+          <div class="input-group">
+            <span class="input-group-addon">Title</span>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Title" value="{{title}}"></input>
+          </div>
+
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">Episode Title</span>
+            <input type="text" class="form-control" name="episode_title" id="episode_title" placeholder="Episode Title" value="{{episode_title}}"></input>
+          </div>
+
+          <br>
+
+          <button type="submit" class="btn btn-default submitter">Submit</button>
+
+        </form>
+        <a href="#close" class="closer">close</a>
+      </div>
+    </div>
+  </div>
 </script>
 
 <script src="javascripts/Ash.js"></script>
 <script src="javascripts/App.js"></script>
 <script src="javascripts/recordingModel.js"></script>
 <script src="javascripts/recordingView.js"></script>
+<script src="javascripts/recordingPopupView.js"></script>
+<script src="javascripts/editRecordingView.js"></script>
+<script src="javascripts/recordingsCollection.js"></script>
+<script src="javascripts/recordingsView.js"></script>
+<script src="javascripts/saved.js"></script>
+<script src="javascripts/savedView.js"></script>
+
+<script>
+  App.init();
+</script>
 
 </html>
