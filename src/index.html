@@ -8,8 +8,22 @@
 <body>
   <div class = "meat">
     <h1 class="title">Ash Example - Recordings</h1>
-    <button class="btn btn-default show-all-btn">Show All Episodes</button>
-    <button class="btn btn-default show-saved-btn">Show Saved Episodes</button>
+    <div style = "float:left">
+      <button class="btn btn-default show-all-btn">Show All Episodes</button>
+      <button class="btn btn-default show-saved-btn">Show Saved Episodes</button>
+    </div>
+
+    <form style = "float:right;max-width:500px;" onsubmit="event.preventDefault();">
+
+      <div class="input-group" style="float:left;max-width:400px;margin-right:10px;">
+        <span class="input-group-addon">Search</span>
+        <input type="text" class="form-control" name="search" id="search" placeholder="Search..."></input>
+      </div>
+
+      <button type="submit" class="btn btn-default search-btn">Submit</button>
+
+    </form>
+
     <table class="table table-striped">
       <thead>
         <tr>
@@ -79,6 +93,7 @@
   </div>
 </script>
 
+<script src="javascripts/string.js"></script>
 <script src="javascripts/Ash.js"></script>
 <script src="javascripts/App.js"></script>
 <script src="javascripts/recordingModel.js"></script>
@@ -89,6 +104,8 @@
 <script src="javascripts/recordingsView.js"></script>
 <script src="javascripts/saved.js"></script>
 <script src="javascripts/savedView.js"></script>
+<script src="javascripts/search.js"></script>
+<script src="javascripts/searchView.js"></script>
 
 <script>
   App.init();

@@ -21,6 +21,10 @@
         self.showSaved();
       });
 
+      Ash.Dom('.search-btn').on('click', function() {
+        self.search(Ash.Dom('#search')[0].value);
+      });
+
     },
 
     // Poor design. Rebuilds the list every single time...
@@ -43,6 +47,20 @@
         collection: this.savedRecordings
       });
 
+    },
+
+    // Only searches all recordings. Should search based on which collection
+    // is viewed.
+    search: function( searchValue ) {
+      console.log('commencing search on ' + searchValue);
+      this.searchedRecordings = new App.Search({
+        collection: this.recordings,
+        searchVal: searchValue
+      });
+
+      this.searchedView = new App.View.Search({
+        collection: this.searchedRecordings
+      });
     }
 
   });

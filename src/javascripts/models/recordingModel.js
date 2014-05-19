@@ -11,7 +11,7 @@ App.Recording = Ash.Model.subclass({
       hour = d.getHours() % 12,
       date = d.getDate(),
       mont = d.getMonth() + 1,
-      year = d.getYear(),
+      year = d.getYear() + 1900,
       meridiem;
 
     // Set the am/pm
@@ -31,7 +31,9 @@ App.Recording = Ash.Model.subclass({
       hour += 1;
     }
 
-    return hour + ':' + minu + ' ' + meridiem;
+    return hour + ':' + minu + ' '
+      + meridiem + '\n' + mont + '-'
+      + date + '-' + year;
   },
 
   run_time: function() {

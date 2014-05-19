@@ -37,6 +37,15 @@ module.exports = {
         filter: 'isFile'
       },
 
+      // include stringjs
+      {
+        expand: true,
+        src: ['lib/string.js'],
+        flatten: true,
+        dest: 'dist/javascripts',
+        filter: 'isFile'
+      },
+
       // include javascripts
       {
         expand: true,
